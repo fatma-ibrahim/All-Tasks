@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToyStore Template</title>
+  <link rel="shortcut icon" href="./Imgs/favicon.png" type="image/x-icon">
+
+  <!-- Google Fonts  -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CVarela+Round:400"
+    media="all">
+
+  <!-- External Files -->
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+  <!-- Header with Contact Information -->
+  <header class="sticky-top">
+    <div class="top-bar text-white py-2">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="small-text">Call Us: +1 213 974-5898</div>
+        <div class="small-text">Email: <a href="mailto:toystore@template.com"
+            class="text-white link-white">toystore@template.com</a>
+        </div>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter text-white"></i></a>
+          <a href="#"><i class="fab fa-facebook text-white"></i></a>
+          <a href="#"><i class="fab fa-instagram text-white"></i></a>
+          <a href="#"><i class="fab fa-pinterest text-white"></i></a>
+          <a href="#"><i class="fab fa-youtube text-white"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand fs-3 font-family" href="#">ToyStore</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main"
+          aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="main">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
+            <li class="nav-item">
+              <a class="nav-link p-2 p-lg-3 active" aria-current="page" href="#">Catalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 p-lg-3" href="#">Delivery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 p-lg-3" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 p-lg-3" href="#">Contacts</a>
+            </li>
+          </ul>
+
+          <a class="nav-link cart-link" href="#">Cart <i class="fas fa-shopping-cart"></i> <span
+              class="item-count text-success text-white">0</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Banner -->
+  <section class="banner d-flex align-items-center justify-content-center">
+    <div class="alert alert-white shadow p-5 text-center">
+      <div class="title">Say Hello to ToyStore!</div>
+      <h1 class="font-family">Free Ecommerce Template for Webflow</h1>
+      <a href="#" class="button text-white">Open Catalog</a>
+    </div>
+  </section>
+
+  <!-- Home Categories -->
+  <section>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div
+            class="card card-custom card-stuffed text-white text-center d-flex align-items-center justify-content-between">
+            <img src="./Imgs/Stuffed Animals/Teddy Bear.png" alt="Stuffed Animals">
+            <div class="card-content d-flex align-items-center flex-column">
+              <h3 class="font-family">Stuffed Animals</h3>
+              <a href="#" class="btn btn-custom mt-3 bg-light">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div
+            class="card card-custom card-wooden text-white text-center d-flex align-items-center justify-content-between">
+            <img src="./Imgs/Wooden Toys/Happy Flower.png" alt="Wooden Toys">
+            <div class="card-content d-flex align-items-center flex-column">
+              <h3 class="font-family">Wooden Toys</h3>
+              <a href="#" class="btn btn-custom mt-3 bg-light">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stuffed Animals -->
+  <section>
+    <div class="haze">
+      <div class="container mt-5">
+        <div class="shop-header d-flex justify-content-between align-items-center">
+          <h3 class="font-family">Stuffed Animals</h3>
+          <div class="link-wrapper d-flex flex-column align-items-center">
+            <a href="#" class="link arrow-link d-flex align-items-center">See All Toys
+              <i class="fas fa-arrow-right"></i></a>
+            <div class="shop-header-line"></div>
+          </div>
+        </div>
+
+        <div class="shop-header-line"></div>
+
+        <div class="row text-center">
+          <!-- Product 1 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card-wrapper d-flex flex-column">
+              <a href="#" class="product-card card card-new">
+                <div class="product-card-image-wrapper">
+                  <img src="./Imgs/Stuffed Animals/Teddy Bear.png" alt="Teddy Bear">
+                </div>
+                <h6 class="product-card-heading align-items-end font-family">Teddy Bear</h6>
+                <div class="product-card-price price-tag align-items-end text-white">$ 30.00 USD</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card-wrapper d-flex flex-column">
+              <a href="#" class="product-card product-card card card-new">
+                <div class="product-card-image-wrapper">
+                  <img src="./Imgs/Stuffed Animals/Mega Plush Toy.png" alt="Mega Plush Toy">
+                </div>
+                <h6 class="product-card-heading align-items-end font-family">Mega Plush Toy</h6>
+                <div class="product-card-price price-tag align-items-end text-white">$ 38.00 USD</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card-wrapper d-flex flex-column">
+              <a href="#" class="product-card card card-new">
+                <div class="product-card-image-wrapper">
+                  <img src="./Imgs/Stuffed Animals/Cute Dog.png" alt="Cute Dog">
+                </div>
+                <h6 class="product-card-heading align-items-end font-family">Cute Dog</h6>
+                <div class="product-card-price price-tag align-items-end text-white">$ 24.00 USD</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card-wrapper d-flex flex-column">
+              <a href="#" class="product-card card card-new">
+                <div class="product-card-image-wrapper">
+                  <img src="./Imgs/Stuffed Animals/Little Friend.png" alt="Little Friend">
+                </div>
+                <h6 class="product-card-heading align-items-end font-family">Little Friend</h6>
+                <div class="product-card-price price-tag align-items-end text-white">$ 27.00 USD</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wooden Toys -->
+  <section>
+    <div class="haze">
+      <div class="container mt-5">
+        <div class="shop-header d-flex justify-content-between align-items-center">
+          <h3 class="font-family">Wooden Toys</h3>
+          <div class="link-wrapper d-flex flex-column align-items-center">
+            <a href="#" class="link arrow-link d-flex align-items-center">See All Toys
+              <i class="fas fa-arrow-right"></i></a>
+            <div class="shop-header-line"></div>
+          </div>
+        </div>
+
+        <div class="shop-header-line"></div>
+
+        <div class="row text-center">
+          <!-- Product 1 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card-wrapper d-flex flex-column">
+              <a href="#" class="product-card card card-new">
+                <div class="product-card-image-wrapper">
+                  <img src="./Imgs/Wooden Toys/Happy Flower.png" alt="Happy Flower">
+                </div>
+                <h6 class="product-card-heading align-items-end font-family">Happy Flower</h6>
+                <div class="product-card-price price-tag align-items-end text-white">$ 38.00 USD</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card-wrapper d-flex flex-column">
+              <a href="#" class="product-card product-card card card-new">
+                <div class="product-card-image-wrapper">
+                  <img src="./Imgs/Wooden Toys/Lift Machine.png" alt="Lift Machine">
+                </div>
+                <h6 class="product-card-heading align-items-end font-family">Lift Machine</h6>
+                <div class="product-card-price price-tag align-items-end text-white">$ 24.00 USD</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card-wrapper d-flex flex-column">
+              <a href="#" class="product-card card card-new">
+                <div class="product-card-image-wrapper">
+                  <img src="./Imgs/Wooden Toys/Wooden Camera.png" alt="Wooden Camera">
+                </div>
+                <h6 class="product-card-heading align-items-end font-family">Wooden Camera</h6>
+                <div class="product-card-price price-tag align-items-end text-white">$ 24.00 USD</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card-wrapper d-flex flex-column">
+              <a href="#" class="product-card card card-new">
+                <div class="product-card-image-wrapper">
+                  <img src="./Imgs/Wooden Toys/Little Rabbit.png" alt="Little Rabbit">
+                </div>
+                <h6 class="product-card-heading align-items-end font-family">Little Rabbit</h6>
+                <div class="product-card-price price-tag align-items-end text-white">$ 16.00 USD</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section>
+    <div class="video-section d-flex flex-column justify-content-center align-items-center text-center text-white">
+      <div class="intro">
+        <div class="title white text-white font-family">About The Shop</div>
+        <h2 class="heading">Watch Our Story</h2>
+        <p>
+          There is no magic formula to write perfect ad copy. It is based on a number of factors, including ad
+          placement, demographic, even the consumer’s mood.
+        </p>
+        <a href="#" class="play-button">
+          <i class="fa-solid fa-play fa-2xl circle"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- More About -->
+  <section class="section text-center d-flex flex-column justify-content-center align-items-center">
+    <div class="container">
+      <div class="intro">
+        <div class="title">Made for Webflow</div>
+        <h2 class="font-family">Simple & Colorful Ecommerce Template for Your Business</h2>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-left">
+          <div class="side-info">
+            <h2 class="text-start font-family">Available for FREE!</h2>
+            <div class="divider"></div>
+            <p class="text-grey text-start">A successful marketing plan relies heavily on the pulling-power of
+              advertising copy.
+              Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take
+              action. There is no magic formula to write perfect ad copy.</p>
+            <a href="#" class="btn button-sp mb-3">GET IT NOW!</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img
+            src="https://assets.website-files.com/5badda2935e11303a89a461e/5bb5c77ee73150e2021b0db4_side-image-01.jpg"
+            alt="Side Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe -->
+  <section class="subscribe container subscribe-section d-flex align-items-center justify-content-between">
+    <div class="subscribe-icon">
+      <i class="fa-solid fa-paper-plane fa-2xl"></i>
+    </div>
+    <div class="subscribe-text">
+      <h4 class="font-family">Subscribe to our newsletter & get <span class="text-green fw-bold">10% discount!</span>
+      </h4>
+    </div>
+    <form class="subscribe-form d-flex align-items-center">
+      <input class="form-control text-center" maxlength="256" name="email" placeholder="Enter your email address"
+        type="email" id="email" required>
+      <input type="submit" data-wait="Please wait..." class="btn button w-button subscribe-button" value="Subscribe">
+    </form>
+  </section>
+
+  <!-- Instagram -->
+  <section class="container py-5">
+    <div class="text-center">
+      <div class="text-green">@ElasticThemes</div>
+      <h2 class="mb-4 font-family">We're on Instagram!</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-lg-2 mb-3">
+        <a href="https://instagram.com" target="_blank" class="d-block">
+          <img src="./Imgs/Instagram/instagram-01.jpg" alt="Instagram 1" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4 col-lg-2 mb-3">
+        <a href="https://instagram.com" target="_blank" class="d-block">
+          <img src="./Imgs/Instagram/instagram-02.jpg" alt="Instagram 2" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4 col-lg-2 mb-3">
+        <a href="https://instagram.com" target="_blank" class="d-block">
+          <img src="./Imgs/Instagram/instagram-03.jpg" alt="Instagram 3" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4 col-lg-2 mb-3">
+        <a href="https://instagram.com" target="_blank" class="d-block">
+          <img src="./Imgs/Instagram/instagram-04.jpg" alt="Instagram 4" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4 col-lg-2 mb-3">
+        <a href="https://instagram.com" target="_blank" class="d-block">
+          <img src="./Imgs/Instagram/instagram-05.jpg" alt="Instagram 5" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4 col-lg-2 mb-3">
+        <a href="https://instagram.com" target="_blank" class="d-block">
+          <img src="./Imgs/Instagram/instagram-06.jpg" alt="Instagram 6" class="img-fluid">
+        </a>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="https://instagram.com" target="_blank" class="btn button-sp mb-3 more-photo">See More Photos</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white footer-end">
+    <div class="container wrapper">
+      <div class="footer d-flex flex-wrap">
+        <div class="footer-left d-flex align-items-center">
+          <a href="#" class="footer-brand">
+            <div class="font-family">ToyStore</div>
+          </a>
+        </div>
+
+        <div class="footer-nav d-flex justify-content-center align-items-center">
+          <a href="#" class="footer-link">Home</a>
+          <a href="#" class="footer-link">Catalog</a>
+          <a href="#" class="footer-link">Delivery</a>
+          <a href="#" class="footer-link">About</a>
+          <a href="#" class="footer-link">Contacts</a>
+        </div>
+
+        <div class="footer-social social-icons d-flex justify-content-end align-items-center">
+          <a href="#"><i class="fab fa-twitter text-white"></i></a>
+          <a href="#"><i class="fab fa-facebook text-white"></i></a>
+          <a href="#"><i class="fab fa-instagram text-white"></i></a>
+          <a href="#"><i class="fab fa-pinterest text-white"></i></a>
+          <a href="#"><i class="fab fa-youtube text-white"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex justify-content-between">
+        <div class="footer-bottom-left">
+          <div>Created with love by <a href="https://elasticthemes.com" target="_blank" class="link-white">Elastic
+              Themes</a></div>
+        </div>
+
+        <div class="footer-bottom-right d-flex justify-content-end align-items-center">
+          <div>Powered by <a href="https://webflow.com/" target="_blank" class="link-white">Webflow</a></div>
+          <div class="footer-bottom-divider"></div>
+          <a href="/template/style-guide" class="link-white">Style Guide</a>
+          <div class="footer-bottom-divider"></div>
+          <a href="/template/licensing" class="link-white">Licensing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+</body>
+
+</html>
