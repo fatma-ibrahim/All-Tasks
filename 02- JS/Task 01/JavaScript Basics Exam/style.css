@@ -1,0 +1,14 @@
+body {
+  background: linear-gradient(to right, blue, green);
+  text-align: center;
+  font-family: fantasy;
+}
+
+h1 {
+  width: 40%;
+  margin: 1rem auto;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 4rem;
+  letter-spacing: 32px;
+  text-transform: uppercase;
+}
