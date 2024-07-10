@@ -1,17 +1,25 @@
 console.log("1- Create Function sumObjectValues()");
+const testObj = {
+  a: 10,
+  b: "text",
+  c: 20,
+  d: true,
+  e: 30,
+};
+
+Object.prototype.num = 50;
+
 function sumObjectValues(obj) {
-  let sum = 0;
-  for (const [key, value] of Object.entries(obj)) {
-    if (typeof value === "number") {
-      console.log(`Processing key: ${key}, value: ${value}`);
-      sum += value;
+  let total = 0;
+  for (let key of Object.keys(obj)) {
+    if (typeof obj[key] === "number") {
+      total += obj[key];
     }
   }
-  return sum;
+  console.log(total);
 }
 
-const exampleObj = { a: 1, b: "string", c: 2, d: 3 };
-console.log(sumObjectValues(exampleObj)); // 6
+sumObjectValues(testObj); // Output should be 60
 
 // ============================================================
 
@@ -86,38 +94,28 @@ console.log(dateDifferenceInDays("2024-01-05", "2024-07-06"));
 
 // ============================================================
 
-// console.log("5- Design a Calulator interface for 2 number inputs");
-function add() {
-  const num1 = parseFloat(document.querySelector("#num1").value);
-  const num2 = parseFloat(document.querySelector("#num2").value);
-  const result = num1 + num2;
-  document.querySelector("#result").textContent = result;
-}
-
-function subtract() {
-  const num1 = parseFloat(document.querySelector("#num1").value);
-  const num2 = parseFloat(document.querySelector("#num2").value);
-  const result = num1 - num2;
-  document.querySelector("#result").textContent = result;
-}
-
-function multiply() {
-  const num1 = parseFloat(document.querySelector("#num1").value);
-  const num2 = parseFloat(document.querySelector("#num2").value);
-  const result = num1 * num2;
-  document.querySelector("#result").textContent = result;
-}
-
-function divide() {
-  const num1 = parseFloat(document.querySelector("#num1").value);
-  const num2 = parseFloat(document.querySelector("#num2").value);
-  if (num2 === 0) {
-    alert("Cannot divide by zero!");
-    return;
+console.log("5- Design a Calulator interface for 2 number inputs");
+function calulator(num1, num2) {
+  function sum() {
+    return num1 + num2;
   }
-  const result = num1 / num2;
-  document.querySelector("#result").textContent = result;
+  function diff() {
+    return num1 - num2;
+  }
+  function mul() {
+    return num1 * num2;
+  }
+  function div() {
+    return num1 / num2;
+  }
+  return { sum, diff, mul, div };
 }
+
+const calc = calulator(50, 2);
+console.log(calc.sum());
+console.log(calc.diff());
+console.log(calc.mul());
+console.log(calc.div());
 
 // ============================================================
 
@@ -125,17 +123,18 @@ console.log(
   "6- Write a function which can return multiple values from a function"
 );
 function calculateCircle(radius) {
-  const areaCalc = Math.PI * radius * radius;
-  const perimeterCalc = 2 * Math.PI * radius;
-  return {
-    area: areaCalc,
-    perimeter: perimeterCalc,
-  };
+  function area() {
+    return Math.PI * radius * radius;
+  }
+  function perimeter() {
+    return 2 * Math.PI * radius;
+  }
+  return { area, perimeter };
 }
 
-const circleData = calculateCircle(5);
-console.log("Area:", circleData.area);
-console.log("Perimeter:", circleData.perimeter);
+const circle = calculateCircle(5);
+console.log("Area:", circle.area());
+console.log("Perimeter:", circle.perimeter());
 
 // ============================================================
 
@@ -164,7 +163,7 @@ console.log(keyValueArray); // Output: [["a", 1], ["b", 2]]
 // ============================================================
 // Bonus ++
 
-console.log("1- Write a function which can convert the time");
+console.log("Bonus ++ 1- Write a function which can convert the time");
 function convertTimeFormat(timeString) {
   // Split the time into two parts: time (hours:minutes) and period (AM/PM)
   const [time, modifier] = timeString.split(" ");
