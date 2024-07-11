@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation Exam1</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+
+<body>
+  <!-- Q3: 2- What is the best is the best way to mark up this layout? -->
+  <div class="address-card">
+    <h1>Mailing Address</h1>
+    <address>
+      6410 Via Real<br>
+      Carpinteria, CA 93013<br>
+      <a href="mailto:info@linkedin.com">info@linkedin.com</a>
+    </address>
+  </div>
+
+  <!-- ============================================================ -->
+
+  <!-- Q4: 1- Make This Possible -->
+  <h1>Hide + Show Content in Javascript</h1>
+  <button type="button" id="showBtn">Show</button>
+  <button type="button" id="hideBtn">Hide</button>
+  <p id="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+
+  <!-- ============================================================ -->
+
+  <!-- Q4: 2- Using Html and css only -->
+  <div class="body">
+    <div class="contact-container">
+      <div class="contact-info">
+        <p><i class="fa-solid fa-location-dot"></i> Location:<br><span class="sub-info">A108 Adam Street, New York, NY
+            535022</span></p>
+        <p><i class="fa-regular fa-envelope"></i> Email:<br><span class="sub-info">info@example.com</span></p>
+        <p><i class="fa-solid fa-mobile-screen-button"></i> Call:<br><span class="sub-info">+1 5589 55488 55s</span></p>
+      </div>
+
+      <div class="contact-form">
+        <form action="/submit_form" method="post">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+          </div>
+
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" placeholder="Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
