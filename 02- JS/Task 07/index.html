@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employees</title>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+
+<body>
+  <header class="bg-dark text-center py-3 text-light">
+    <h2>Employee List</h2>
+  </header>
+
+  <section class="my-5 container w-50 mx-auto form-section">
+    <form>
+      <div class="form-group my-2">
+        <label for="name">Employee Name</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="form-group my-2">
+        <label for="age">Employee Age</label>
+        <input type="number" class="form-control" id="age">
+      </div>
+      <div class="form-group my-2">
+        <label for="position">Employee Position</label>
+        <input type="text" class="form-control" id="position">
+      </div>
+      <div class="form-group my-2">
+        <label for="department">Employee Department</label>
+        <input type="text" class="form-control" id="department">
+      </div>
+      <input type="submit" value="Add Employee" class="btn btn-dark mt-2" id="submit-btn" />
+    </form>
+  </section>
+
+  <section class="my-5 container text-center">
+    <table class="table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
