@@ -8,11 +8,11 @@ class Circle {
     this.radius = radius;
   }
 
-  getRadius(): number {
+  get Radius(): number {
     return this.radius;
   }
 
-  setRadius(radius: number) {
+  set Radius(radius: number) {
     this.radius = radius;
   }
 
@@ -32,7 +32,7 @@ class Circle {
 }
 
 const cir = new Circle("Red", 1.0);
-cir.setRadius(4);
+cir.Radius = 4;
 console.log(cir.toString());
 
 // Q2
@@ -45,11 +45,11 @@ class Rectangle {
     this.width = width;
   }
 
-  setLength(length: number) {
+  set Length(length: number) {
     this.length = length;
   }
 
-  setWidth(width: number) {
+  set Width(width: number) {
     this.width = width;
   }
 
@@ -69,8 +69,8 @@ class Rectangle {
 }
 
 const rect = new Rectangle(5, 6);
-rect.setLength(8);
-rect.setWidth(4);
+rect.Length = 8;
+rect.Width = 4;
 console.log(rect.toString());
 
 // Q3
@@ -87,31 +87,31 @@ class Employee {
     this.salary = salary;
   }
 
-  getId(): number {
+  get Id(): number {
     return this.id;
   }
 
-  getFirstName(): string {
+  get FirstName(): string {
     return this.firstName;
   }
 
-  getLastName(): string {
+  get LastName(): string {
     return this.lastName;
   }
 
-  getName(): string {
+  get Name(): string {
     return `${this.firstName} ${this.lastName}`;
   }
 
-  getSalary(): number {
+  get Salary(): number {
     return this.salary;
   }
 
-  setSalary(salary: number) {
+  set Salary(salary: number) {
     this.salary = salary;
   }
 
-  getAnnualSalary(): number {
+  get AnnualSalary(): number {
     return this.salary * 12;
   }
 
@@ -121,9 +121,7 @@ class Employee {
   }
 
   public toString(): string {
-    return `ID: ${this.id} \nFirst Name: ${this.firstName} \nLast Name: ${
-      this.lastName
-    } \nName is: ${this.getName()} \nSalary: ${this.salary}`;
+    return `ID: ${this.id} \nFirst Name: ${this.firstName} \nLast Name: ${this.lastName} \nName is: ${this.Name} \nSalary: ${this.salary}`;
   }
 }
 
@@ -131,8 +129,8 @@ const emp = new Employee(1, "John", "Doe", 5000);
 console.log(emp.toString());
 
 emp.raiseSalary(10);
-console.log(`New Salary after raise: ${emp.getSalary()}`);
-console.log(`Annual Salary: ${emp.getAnnualSalary()}`);
+console.log(`New Salary after raise: ${emp.Salary}`);
+console.log(`Annual Salary: ${emp.AnnualSalary}`);
 
 // Q4
 class InvoiceItem {
@@ -148,31 +146,31 @@ class InvoiceItem {
     this.unitPrice = unitPrice;
   }
 
-  getId(): string {
+  get Id(): string {
     return this.id;
   }
 
-  getDesc(): string {
+  get Desc(): string {
     return this.desc;
   }
 
-  getQty(): number {
+  get Qty(): number {
     return this.qty;
   }
 
-  setQty(qty: number) {
+  set Qty(qty: number) {
     this.qty = qty;
   }
 
-  getUnitPrice(): number {
+  get UnitPrice(): number {
     return this.unitPrice;
   }
 
-  setUnitPrice(unitPrice: number) {
+  set UnitPrice(unitPrice: number) {
     this.unitPrice = unitPrice;
   }
 
-  getTotal(): number {
+  get Total(): number {
     return this.unitPrice * this.qty;
   }
 
@@ -198,15 +196,15 @@ class Account {
     this.balance = balance;
   }
 
-  getId(): string {
+  get Id(): string {
     return this.id;
   }
 
-  getName(): string {
+  get Name(): string {
     return this.name;
   }
 
-  getBalance(): number {
+  get Balance(): number {
     return this.balance;
   }
 
@@ -247,16 +245,16 @@ console.log(acc2.toString());
 
 // Add an amount to the balance
 acc1.credit(200);
-console.log(`Updated Balance of acc1: ${acc1.getBalance()}`);
+console.log(`Updated Balance of acc1: ${acc1.Balance}`);
 
 // Deduct an amount from the balance
 acc1.debit(100);
-console.log(`Updated Balance of acc1: ${acc1.getBalance()}`);
+console.log(`Updated Balance of acc1: ${acc1.Balance}`);
 
 // Transferring an amount from one account to another
 acc1.transferTo(acc2, 150);
-console.log(`Updated Balance of acc1: ${acc1.getBalance()}`);
-console.log(`Updated Balance of acc2: ${acc2.getBalance()}`);
+console.log(`Updated Balance of acc1: ${acc1.Balance}`);
+console.log(`Updated Balance of acc2: ${acc2.Balance}`);
 
 // Q6
 class Time {
@@ -270,27 +268,27 @@ class Time {
     this.second = second;
   }
 
-  getHour(): number {
+  get Hour(): number {
     return this.hour;
   }
 
-  getMinute(): number {
+  get Minute(): number {
     return this.minute;
   }
 
-  getSecond(): number {
+  get Second(): number {
     return this.second;
   }
 
-  setHour(hour: number) {
+  set Hour(hour: number) {
     this.hour = hour;
   }
 
-  setMinute(minute: number) {
+  set Minute(minute: number) {
     this.minute = minute;
   }
 
-  setSecond(second: number) {
+  set Second(second: number) {
     this.second = second;
   }
 
@@ -371,43 +369,43 @@ class Ball {
     this.yDelta = yDelta;
   }
 
-  getX(): number {
+  get X(): number {
     return this.x;
   }
 
-  setX(x: number) {
+  set X(x: number) {
     this.x = x;
   }
 
-  getY(): number {
+  get Y(): number {
     return this.y;
   }
 
-  setY(y: number) {
+  set Y(y: number) {
     this.y = y;
   }
 
-  getRadius(): number {
+  get Radius(): number {
     return this.radius;
   }
 
-  setRadius(radius: number) {
+  set Radius(radius: number) {
     this.radius = radius;
   }
 
-  getXDelta(): number {
+  get XDelta(): number {
     return this.xDelta;
   }
 
-  setXDelta(xDelta: number) {
+  set XDelta(xDelta: number) {
     this.xDelta = xDelta;
   }
 
-  getYDelta(): number {
+  get YDelta(): number {
     return this.yDelta;
   }
 
-  setYDelta(yDelta: number) {
+  set YDelta(yDelta: number) {
     this.yDelta = yDelta;
   }
 
@@ -453,19 +451,19 @@ class Author {
     this.gender = gender;
   }
 
-  getName(): string {
+  get Name(): string {
     return this.name;
   }
 
-  getEmail(): string {
+  get Email(): string {
     return this.email;
   }
 
-  setEmail(email: string) {
+  set Email(email: string) {
     this.email = email;
   }
 
-  getGender(): "m" | "f" {
+  get Gender(): "m" | "f" {
     return this.gender;
   }
 
@@ -477,5 +475,5 @@ class Author {
 const author = new Author("John Doe", "john.doe@example.com", "m");
 console.log(author.toString());
 
-author.setEmail("john.newemail@example.com");
+author.Email = "john.newemail@example.com";
 console.log(author.toString());

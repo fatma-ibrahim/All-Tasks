@@ -4,12 +4,16 @@ var Circle = /** @class */ (function () {
         this.color = color;
         this.radius = radius;
     }
-    Circle.prototype.getRadius = function () {
-        return this.radius;
-    };
-    Circle.prototype.setRadius = function (radius) {
-        this.radius = radius;
-    };
+    Object.defineProperty(Circle.prototype, "Radius", {
+        get: function () {
+            return this.radius;
+        },
+        set: function (radius) {
+            this.radius = radius;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Circle.prototype.getArea = function () {
         return Math.PI * Math.pow(this.radius, 2);
     };
@@ -22,7 +26,7 @@ var Circle = /** @class */ (function () {
     return Circle;
 }());
 var cir = new Circle("Red", 1.0);
-cir.setRadius(4);
+cir.Radius = 4;
 console.log(cir.toString());
 // Q2
 var Rectangle = /** @class */ (function () {
@@ -30,12 +34,20 @@ var Rectangle = /** @class */ (function () {
         this.length = length;
         this.width = width;
     }
-    Rectangle.prototype.setLength = function (length) {
-        this.length = length;
-    };
-    Rectangle.prototype.setWidth = function (width) {
-        this.width = width;
-    };
+    Object.defineProperty(Rectangle.prototype, "Length", {
+        set: function (length) {
+            this.length = length;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Rectangle.prototype, "Width", {
+        set: function (width) {
+            this.width = width;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Rectangle.prototype.getArea = function () {
         return this.length * this.width;
     };
@@ -48,8 +60,8 @@ var Rectangle = /** @class */ (function () {
     return Rectangle;
 }());
 var rect = new Rectangle(5, 6);
-rect.setLength(8);
-rect.setWidth(4);
+rect.Length = 8;
+rect.Width = 4;
 console.log(rect.toString());
 // Q3
 var Employee = /** @class */ (function () {
@@ -59,41 +71,65 @@ var Employee = /** @class */ (function () {
         this.lastName = lastName;
         this.salary = salary;
     }
-    Employee.prototype.getId = function () {
-        return this.id;
-    };
-    Employee.prototype.getFirstName = function () {
-        return this.firstName;
-    };
-    Employee.prototype.getLastName = function () {
-        return this.lastName;
-    };
-    Employee.prototype.getName = function () {
-        return "".concat(this.firstName, " ").concat(this.lastName);
-    };
-    Employee.prototype.getSalary = function () {
-        return this.salary;
-    };
-    Employee.prototype.setSalary = function (salary) {
-        this.salary = salary;
-    };
-    Employee.prototype.getAnnualSalary = function () {
-        return this.salary * 12;
-    };
+    Object.defineProperty(Employee.prototype, "Id", {
+        get: function () {
+            return this.id;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Employee.prototype, "FirstName", {
+        get: function () {
+            return this.firstName;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Employee.prototype, "LastName", {
+        get: function () {
+            return this.lastName;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Employee.prototype, "Name", {
+        get: function () {
+            return "".concat(this.firstName, " ").concat(this.lastName);
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Employee.prototype, "Salary", {
+        get: function () {
+            return this.salary;
+        },
+        set: function (salary) {
+            this.salary = salary;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Employee.prototype, "AnnualSalary", {
+        get: function () {
+            return this.salary * 12;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Employee.prototype.raiseSalary = function (percent) {
         this.salary += this.salary * (percent / 100);
         return this.salary;
     };
     Employee.prototype.toString = function () {
-        return "ID: ".concat(this.id, " \nFirst Name: ").concat(this.firstName, " \nLast Name: ").concat(this.lastName, " \nName is: ").concat(this.getName(), " \nSalary: ").concat(this.salary);
+        return "ID: ".concat(this.id, " \nFirst Name: ").concat(this.firstName, " \nLast Name: ").concat(this.lastName, " \nName is: ").concat(this.Name, " \nSalary: ").concat(this.salary);
     };
     return Employee;
 }());
 var emp = new Employee(1, "John", "Doe", 5000);
 console.log(emp.toString());
 emp.raiseSalary(10);
-console.log("New Salary after raise: ".concat(emp.getSalary()));
-console.log("Annual Salary: ".concat(emp.getAnnualSalary()));
+console.log("New Salary after raise: ".concat(emp.Salary));
+console.log("Annual Salary: ".concat(emp.AnnualSalary));
 // Q4
 var InvoiceItem = /** @class */ (function () {
     function InvoiceItem(id, desc, qty, unitPrice) {
@@ -102,27 +138,47 @@ var InvoiceItem = /** @class */ (function () {
         this.qty = qty;
         this.unitPrice = unitPrice;
     }
-    InvoiceItem.prototype.getId = function () {
-        return this.id;
-    };
-    InvoiceItem.prototype.getDesc = function () {
-        return this.desc;
-    };
-    InvoiceItem.prototype.getQty = function () {
-        return this.qty;
-    };
-    InvoiceItem.prototype.setQty = function (qty) {
-        this.qty = qty;
-    };
-    InvoiceItem.prototype.getUnitPrice = function () {
-        return this.unitPrice;
-    };
-    InvoiceItem.prototype.setUnitPrice = function (unitPrice) {
-        this.unitPrice = unitPrice;
-    };
-    InvoiceItem.prototype.getTotal = function () {
-        return this.unitPrice * this.qty;
-    };
+    Object.defineProperty(InvoiceItem.prototype, "Id", {
+        get: function () {
+            return this.id;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(InvoiceItem.prototype, "Desc", {
+        get: function () {
+            return this.desc;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(InvoiceItem.prototype, "Qty", {
+        get: function () {
+            return this.qty;
+        },
+        set: function (qty) {
+            this.qty = qty;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(InvoiceItem.prototype, "UnitPrice", {
+        get: function () {
+            return this.unitPrice;
+        },
+        set: function (unitPrice) {
+            this.unitPrice = unitPrice;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(InvoiceItem.prototype, "Total", {
+        get: function () {
+            return this.unitPrice * this.qty;
+        },
+        enumerable: false,
+        configurable: true
+    });
     InvoiceItem.prototype.toString = function () {
         return "ID: ".concat(this.id, " \ndesc: ").concat(this.desc, " \nqty: ").concat(this.qty, " \nunitPrice: ").concat(this.unitPrice.toFixed(2));
     };
@@ -138,15 +194,27 @@ var Account = /** @class */ (function () {
         this.name = name;
         this.balance = balance;
     }
-    Account.prototype.getId = function () {
-        return this.id;
-    };
-    Account.prototype.getName = function () {
-        return this.name;
-    };
-    Account.prototype.getBalance = function () {
-        return this.balance;
-    };
+    Object.defineProperty(Account.prototype, "Id", {
+        get: function () {
+            return this.id;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Account.prototype, "Name", {
+        get: function () {
+            return this.name;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Account.prototype, "Balance", {
+        get: function () {
+            return this.balance;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Account.prototype.credit = function (amount) {
         this.balance += amount;
         return this.balance;
@@ -181,14 +249,14 @@ console.log(acc1.toString());
 console.log(acc2.toString());
 // Add an amount to the balance
 acc1.credit(200);
-console.log("Updated Balance of acc1: ".concat(acc1.getBalance()));
+console.log("Updated Balance of acc1: ".concat(acc1.Balance));
 // Deduct an amount from the balance
 acc1.debit(100);
-console.log("Updated Balance of acc1: ".concat(acc1.getBalance()));
+console.log("Updated Balance of acc1: ".concat(acc1.Balance));
 // Transferring an amount from one account to another
 acc1.transferTo(acc2, 150);
-console.log("Updated Balance of acc1: ".concat(acc1.getBalance()));
-console.log("Updated Balance of acc2: ".concat(acc2.getBalance()));
+console.log("Updated Balance of acc1: ".concat(acc1.Balance));
+console.log("Updated Balance of acc2: ".concat(acc2.Balance));
 // Q6
 var Time = /** @class */ (function () {
     function Time(hour, minute, second) {
@@ -196,24 +264,36 @@ var Time = /** @class */ (function () {
         this.minute = minute;
         this.second = second;
     }
-    Time.prototype.getHour = function () {
-        return this.hour;
-    };
-    Time.prototype.getMinute = function () {
-        return this.minute;
-    };
-    Time.prototype.getSecond = function () {
-        return this.second;
-    };
-    Time.prototype.setHour = function (hour) {
-        this.hour = hour;
-    };
-    Time.prototype.setMinute = function (minute) {
-        this.minute = minute;
-    };
-    Time.prototype.setSecond = function (second) {
-        this.second = second;
-    };
+    Object.defineProperty(Time.prototype, "Hour", {
+        get: function () {
+            return this.hour;
+        },
+        set: function (hour) {
+            this.hour = hour;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Time.prototype, "Minute", {
+        get: function () {
+            return this.minute;
+        },
+        set: function (minute) {
+            this.minute = minute;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Time.prototype, "Second", {
+        get: function () {
+            return this.second;
+        },
+        set: function (second) {
+            this.second = second;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Time.prototype.setTime = function (hour, minute, second) {
         this.hour = hour;
         this.minute = minute;
@@ -272,36 +352,56 @@ var Ball = /** @class */ (function () {
         this.xDelta = xDelta;
         this.yDelta = yDelta;
     }
-    Ball.prototype.getX = function () {
-        return this.x;
-    };
-    Ball.prototype.setX = function (x) {
-        this.x = x;
-    };
-    Ball.prototype.getY = function () {
-        return this.y;
-    };
-    Ball.prototype.setY = function (y) {
-        this.y = y;
-    };
-    Ball.prototype.getRadius = function () {
-        return this.radius;
-    };
-    Ball.prototype.setRadius = function (radius) {
-        this.radius = radius;
-    };
-    Ball.prototype.getXDelta = function () {
-        return this.xDelta;
-    };
-    Ball.prototype.setXDelta = function (xDelta) {
-        this.xDelta = xDelta;
-    };
-    Ball.prototype.getYDelta = function () {
-        return this.yDelta;
-    };
-    Ball.prototype.setYDelta = function (yDelta) {
-        this.yDelta = yDelta;
-    };
+    Object.defineProperty(Ball.prototype, "X", {
+        get: function () {
+            return this.x;
+        },
+        set: function (x) {
+            this.x = x;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Ball.prototype, "Y", {
+        get: function () {
+            return this.y;
+        },
+        set: function (y) {
+            this.y = y;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Ball.prototype, "Radius", {
+        get: function () {
+            return this.radius;
+        },
+        set: function (radius) {
+            this.radius = radius;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Ball.prototype, "XDelta", {
+        get: function () {
+            return this.xDelta;
+        },
+        set: function (xDelta) {
+            this.xDelta = xDelta;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Ball.prototype, "YDelta", {
+        get: function () {
+            return this.yDelta;
+        },
+        set: function (yDelta) {
+            this.yDelta = yDelta;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Ball.prototype.move = function () {
         this.x += this.xDelta;
         this.y += this.yDelta;
@@ -332,18 +432,30 @@ var Author = /** @class */ (function () {
         this.email = email;
         this.gender = gender;
     }
-    Author.prototype.getName = function () {
-        return this.name;
-    };
-    Author.prototype.getEmail = function () {
-        return this.email;
-    };
-    Author.prototype.setEmail = function (email) {
-        this.email = email;
-    };
-    Author.prototype.getGender = function () {
-        return this.gender;
-    };
+    Object.defineProperty(Author.prototype, "Name", {
+        get: function () {
+            return this.name;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Author.prototype, "Email", {
+        get: function () {
+            return this.email;
+        },
+        set: function (email) {
+            this.email = email;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Author.prototype, "Gender", {
+        get: function () {
+            return this.gender;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Author.prototype.toString = function () {
         return "name: ".concat(this.name, " \nemail: ").concat(this.email, " \ngender: ").concat(this.gender);
     };
@@ -351,5 +463,5 @@ var Author = /** @class */ (function () {
 }());
 var author = new Author("John Doe", "john.doe@example.com", "m");
 console.log(author.toString());
-author.setEmail("john.newemail@example.com");
+author.Email = "john.newemail@example.com";
 console.log(author.toString());
