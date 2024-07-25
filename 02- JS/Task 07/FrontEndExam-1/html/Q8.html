@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q5 FrontEndExam-1</title>
+  <link rel="stylesheet" href="../css/Q8.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+
+<body>
+  <!-- 8- Using Html5 and css3 Make it possible -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <i class="fa-regular fa-user icon"></i>
+        <div class="logo">Marvel</div>
+      </div>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Resume</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button id="color-mode-toggle" class="color-mode">
+        <i class="fa-regular fa-moon icon"></i>
+        Color mode
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="content">
+        <p>Welcome to my portfolio website!</p>
+        <h1>Hey folks, I'm <span>Marvel Sann</span></h1>
+        <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces,
+          and web
+          development.</p>
+        <div class="buttons">
+          <button class="btn download-resume">
+            <i class="fa-regular fa-file-lines"></i>
+            Download Resume
+          </button>
+          <button class="btn get-quote">
+            Get a free quote
+          </button>
+        </div>
+      </div>
+      <div class="illustration">
+        <img src="../img/undraw_software_engineer_lvl5.svg" alt="Illustration of a person working on a laptop">
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('color-mode-toggle').addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+
+      const icon = this.querySelector('i');
+      if (document.body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    });
+
+  </script>
+</body>
+
+</html>

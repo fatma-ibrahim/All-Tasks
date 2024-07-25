@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q5 FrontEndExam-1</title>
+  <link rel="stylesheet" href="../css/Q5.css">
+</head>
+
+<body>
+  <!-- 5- Create Background Generator Using (html , css , js) -->
+  <h1>Background Generator</h1>
+  <input type="color" value="#0000ff" id="f-input">
+  <input type="color" value="#008800" id="s-input">
+
+  <script>
+    let body = document.querySelector("body");
+    let firstInput = document.querySelector("#f-input");
+    let secondInput = document.querySelector("#s-input");
+
+    function setGradientBackgroundToBody() {
+      body.style.background = `linear-gradient(to right , ${firstInput.value} 
+    ,${secondInput.value})`;
+    }
+
+    firstInput.addEventListener("input", setGradientBackgroundToBody);
+    secondInput.addEventListener("input", setGradientBackgroundToBody);
+  </script>
+</body>
+
+</html>

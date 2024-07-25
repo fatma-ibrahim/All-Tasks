@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Clone</title>
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ff0000;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo i {
+      font-size: 2em;
+      margin-right: 10px;
+    }
+
+    .search-bar {
+      display: flex;
+      flex-grow: 1;
+      margin: 0 20px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 5px;
+      border: none;
+      border-radius: 3px;
+    }
+
+    .search-bar button {
+      padding: 5px 10px;
+      background-color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .search-bar button i {
+      color: #ff0000;
+    }
+
+    .user-icons i {
+      font-size: 1.5em;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .main-content {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #f1f1f1;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      position: fixed;
+      left: 0;
+      overflow: auto;
+      padding-top: 70px;
+    }
+
+    .sidebar nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar nav ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar nav ul li a {
+      text-decoration: none;
+      color: black;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar nav ul li a i {
+      margin-right: 10px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      margin-left: 220px;
+      flex-grow: 1;
+    }
+
+    .video-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-card img {
+      width: 100%;
+    }
+
+    .video-card h3 {
+      margin: 10px;
+      font-size: 1em;
+    }
+
+    .video-card p {
+      margin: 0 10px 10px;
+      color: #555;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <i class="fab fa-youtube"></i>
+      <h1>YouTube</h1>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search">
+      <button type="button"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="user-icons">
+      <i class="fas fa-bell"></i>
+      <i class="fas fa-user-circle"></i>
+    </div>
+  </header>
+  <div class="main-content">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-fire"></i> Trending</a></li>
+          <li><a href="#"><i class="fas fa-subscript"></i> Subscriptions</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <section class="video-grid">
+      <div class="video-card">
+        <img src="../img/10.jpeg" alt="Video Thumbnail">
+        <h3>Video Title 1</h3>
+        <p>Channel Name • Views • Time</p>
+      </div>
+      <div class="video-card">
+        <img src="../img/11.jpeg" alt="Video Thumbnail">
+        <h3>Video Title 2</h3>
+        <p>Channel Name • Views • Time</p>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <p>&copy; 2024 YouTube Clone</p>
+  </footer>
+</body>
+
+</html>
