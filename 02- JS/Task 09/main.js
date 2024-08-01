@@ -1,13 +1,14 @@
 // Initialize EmailJS
-emailjs.init("JffZZVT3QDJma3QWw"); 
+emailjs.init("JffZZVT3QDJma3QWw");
 
 // Show the contact form when "Contact" is clicked
 document
   .getElementById("contactLink")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    document.querySelector(".contact").style.display = "block";
-    document.querySelector(".contact").scrollIntoView({ behavior: "smooth" });
+    const contactForm = document.querySelector(".contact");
+    contactForm.style.display = "block";
+    contactForm.scrollIntoView({ behavior: "smooth" });
   });
 
 // Handle form submission
@@ -18,47 +19,42 @@ document
 
     emailjs.sendForm("service_c03vdwj", "template_ywdy8jp", this).then(
       function () {
-        // Display success message
-        const notification = document.getElementById("notification");
-        notification.className = "notification success";
-        notification.textContent = "Message sent successfully!";
-        notification.style.display = "block";
-        setTimeout(() => {
-          notification.style.display = "none";
-        }, 5000);
-
-        // Reset form
+        displayNotification("Message sent successfully!", "success");
         document.getElementById("contact-form").reset();
       },
-      function (error) {
-        // Display error message
-        const notification = document.getElementById("notification");
-        notification.className = "notification error";
-        notification.textContent = "There was an error sending your message.";
-        notification.style.display = "block";
-        setTimeout(() => {
-          notification.style.display = "none";
-        }, 5000);
+      function () {
+        displayNotification(
+          "There was an error sending your message.",
+          "error"
+        );
       }
     );
   });
+
+function displayNotification(message, type) {
+  const notification = document.getElementById("notification");
+  notification.className = `notification ${type}`;
+  notification.textContent = message;
+  notification.style.display = "block";
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 5000);
+}
 
 // Fetch news from NewsAPI and display it
 const apiKey = "04476306a733476cbeed34637efe0ccb";
 const countries = ["us"];
 let currentPage = 1;
-let articlesPerPage = 3;
+const articlesPerPage = 3;
 let currentCategory = "technology";
 let allArticles = [];
 
 async function fetchNews(category) {
   currentCategory = category;
   currentPage = 1;
-  const container = document.getElementById("news-container");
-  container.innerHTML = ""; // Clear existing news
   allArticles = [];
 
-  for (let country of countries) {
+  for (const country of countries) {
     const response = await fetch(
       `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`
     );
@@ -80,21 +76,20 @@ function displayNews() {
     const card = document.createElement("div");
     card.className = "card";
     const imageUrl = article.urlToImage || "8.jpeg"; // Default image if urlToImage is not available
+    const title = article.title.replace(/"/g, "&quot;");
+    const description = (article.description || "No details available").replace(
+      /"/g,
+      "&quot;"
+    );
     card.innerHTML = `
       <img src="${imageUrl}" alt="News Image" class="card-img">
       <div class="card-content">
         <h3 class="card-title">${article.title}</h3>
-        <p class="card-author">${
-          article.author ? article.author : "Unknown author"
-        }</p>
+        <p class="card-author">${article.author || "Unknown author"}</p>
         <button class="btn source-btn" onclick="window.open('${
           article.url
         }', '_blank')">Source</button>
-        <button class="btn details-btn" onclick="showDetails('${
-          article.title
-        }', '${
-      article.description || "No details available"
-    }')">Details</button>
+        <button class="btn details-btn" onclick="showDetails(\`${title}\`, \`${description}\`)">Details</button>
       </div>
     `;
     container.appendChild(card);
