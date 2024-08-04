@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final FrontEnd Exam Q3</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+  <!-- 3- -->
+  <select id="myDropdown">
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+
+  <button onclick="removeSelectedItem()">Remove Selected Item</button>
+  <button onclick="removeAllItems()">Remove All Items</button>
+
+  <br><br>
+  <hr>
+  <br>
+
+  <!-- 4- -->
+  <h2>Input radius value and get the volume of a sphere.</h2>
+
+  <form>
+    <label for="radius">Radius</label>
+    <input type="text" id="radius" name="radius">
+    <br><br>
+    <label for="volume">Volume</label>
+    <input type="text" id="volume" name="volume" readonly>
+    <br><br>
+    <button type="button" onclick="calculateVolume()">Calculate</button>
+  </form>
+
+  <br>
+  <hr>
+  <br>
+
+  <div class="body">
+    <div class="wrapper">
+      <header>
+        <h1>Header</h1>
+      </header>
+
+      <main>
+        <p>This is the main content area.</p>
+        <p>Add more content here to see how the footer behaves.</p>
+      </main>
+    </div>
+
+    <footer class="sticky-footer">
+      <p>Sticky Footer Content</p>
+    </footer>
+  </div>
+
+  <script src="../JS & TS/main.js"></script>
+  <script src="../Q7.js"></script>
+</body>
+
+</html>
